@@ -15,6 +15,7 @@ namespace TelloCmdCS
             ConsoleLog log = Log.Instance as ConsoleLog;
             log.LogSeverityLevel = LogSeverity.Info;
 
+
             tello = new TelloCmd();
 
             // load settings
