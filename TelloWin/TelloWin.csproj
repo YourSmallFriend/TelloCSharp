@@ -1,22 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\LibsCSharp\LogLib\LogLib.csproj" />
     <ProjectReference Include="..\..\LibsCSharp\SettingsLib\SettingsLib.csproj" />
     <ProjectReference Include="..\Tello\Tello.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <None Update="TelloConfig.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 </Project>
