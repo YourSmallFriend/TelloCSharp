@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LibsCSharp\LogLib\LogLib.csproj" />
+    <ProjectReference Include="..\..\LibsCSharp\SettingsLib\SettingsLib.csproj" />
+    <ProjectReference Include="..\TelloCmd\TelloCmd.csproj" />
+    <ProjectReference Include="..\TelloWin\TelloWin.csproj" />
+    <ProjectReference Include="..\Tello\Tello.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+</Project>

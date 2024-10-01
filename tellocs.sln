@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogLib", "..\LibsCSharp\Log
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SettingsLib", "..\LibsCSharp\SettingsLib\SettingsLib.csproj", "{B25B9FF1-215E-4559-8065-CF2E202A1EC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "controller", "controller\controller.csproj", "{A89ABE98-4646-428B-BF70-BE1D9AD412EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B25B9FF1-215E-4559-8065-CF2E202A1EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B25B9FF1-215E-4559-8065-CF2E202A1EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B25B9FF1-215E-4559-8065-CF2E202A1EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A89ABE98-4646-428B-BF70-BE1D9AD412EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A89ABE98-4646-428B-BF70-BE1D9AD412EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A89ABE98-4646-428B-BF70-BE1D9AD412EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A89ABE98-4646-428B-BF70-BE1D9AD412EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
