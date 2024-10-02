@@ -64,12 +64,12 @@ namespace controller
 
         private void BtnVooruit_Click(object sender, EventArgs e)
         {
-            tello.Forward(50);
+            tello.Forward(100);
         }
 
         private void BtnAchteruit_Click(object sender, EventArgs e)
         {
-            tello.Back(50);
+            tello.Back(100);
         }
 
         private void BtnFlip_Click(object sender, EventArgs e)
@@ -94,17 +94,19 @@ namespace controller
 
         private void button4_Click(object sender, EventArgs e)
         {
-            tello.Right(50);
+            tello.Right(100);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tello.Left(50);
+            tello.Left(100);
         }
 
         private void BtnStream_Click(object sender, EventArgs e)
         {
-            tello.StreamOn();
+            //start video stream
+            tello.StartOrStopVideoStreaming();
+
         }
     }
 }

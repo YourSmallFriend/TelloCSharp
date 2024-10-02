@@ -23,7 +23,7 @@ namespace TelloCmdCS
             Log.Action($"Load settings from {settingsFile}");
             Settings settings = new Settings(settingsFile);
             settings.LoadSettings();
-            tello.Speed = settings.GetOrAddSetting<int>("DefaultDroneSpeed", 50);
+            tello.Speed = settings.GetOrAddSetting<int>("DefaultDroneSpeed", 100);
             tello.DefaultPhotoFolder = settings.GetOrAddSetting<string>("DefaultPhotoFolder", string.Empty);
             tello.DefaultVideoFolder = settings.GetOrAddSetting<string>("DefaultVideoFolder", string.Empty);
             tello.FFmpegPath = settings.GetOrAddSetting<string>("FFmpegPath", "ffmpeg.exe");

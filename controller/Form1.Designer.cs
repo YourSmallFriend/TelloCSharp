@@ -41,6 +41,7 @@
             button3 = new System.Windows.Forms.Button();
             button4 = new System.Windows.Forms.Button();
             BtnStream = new System.Windows.Forms.Button();
+            button5 = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // button1
@@ -186,11 +187,22 @@
             BtnStream.UseVisualStyleBackColor = true;
             BtnStream.Click += BtnStream_Click;
             // 
+            // button5
+            // 
+            button5.Location = new System.Drawing.Point(305, 397);
+            button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            button5.Name = "button5";
+            button5.Size = new System.Drawing.Size(131, 72);
+            button5.TabIndex = 13;
+            button5.Text = "test";
+            button5.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(800, 562);
+            Controls.Add(button5);
             Controls.Add(BtnStream);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -226,6 +238,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button BtnStream;
+        private System.Windows.Forms.Button button5;
     }
 }
 
