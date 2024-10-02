@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button1 = new System.Windows.Forms.Button();
             button2 = new System.Windows.Forms.Button();
             BtnTurnLeft = new System.Windows.Forms.Button();
@@ -41,7 +42,10 @@
             button3 = new System.Windows.Forms.Button();
             button4 = new System.Windows.Forms.Button();
             BtnStream = new System.Windows.Forms.Button();
-            button5 = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            BtnOmhoog = new System.Windows.Forms.Button();
+            BtnOmlaag = new System.Windows.Forms.Button();
             SuspendLayout();
             // 
             // button1
@@ -187,22 +191,51 @@
             BtnStream.UseVisualStyleBackColor = true;
             BtnStream.Click += BtnStream_Click;
             // 
-            // button5
+            // label1
             // 
-            button5.Location = new System.Drawing.Point(305, 397);
-            button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new System.Drawing.Size(131, 72);
-            button5.TabIndex = 13;
-            button5.Text = "test";
-            button5.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(31, 3);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(50, 20);
+            label1.TabIndex = 13;
+            label1.Text = "label1";
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 5000;
+            timer1.Tick += timer1_Tick;
+            // 
+            // BtnOmhoog
+            // 
+            BtnOmhoog.Location = new System.Drawing.Point(579, 28);
+            BtnOmhoog.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            BtnOmhoog.Name = "BtnOmhoog";
+            BtnOmhoog.Size = new System.Drawing.Size(131, 72);
+            BtnOmhoog.TabIndex = 14;
+            BtnOmhoog.Text = "Omhoog";
+            BtnOmhoog.UseVisualStyleBackColor = true;
+            BtnOmhoog.Click += BtnOmhoog_Click;
+            // 
+            // BtnOmlaag
+            // 
+            BtnOmlaag.Location = new System.Drawing.Point(579, 108);
+            BtnOmlaag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            BtnOmlaag.Name = "BtnOmlaag";
+            BtnOmlaag.Size = new System.Drawing.Size(131, 72);
+            BtnOmlaag.TabIndex = 15;
+            BtnOmlaag.Text = "Omlaag";
+            BtnOmlaag.UseVisualStyleBackColor = true;
+            BtnOmlaag.Click += BtnOmlaag_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(800, 562);
-            Controls.Add(button5);
+            ClientSize = new System.Drawing.Size(732, 562);
+            Controls.Add(BtnOmlaag);
+            Controls.Add(BtnOmhoog);
+            Controls.Add(label1);
             Controls.Add(BtnStream);
             Controls.Add(button4);
             Controls.Add(button3);
@@ -221,6 +254,7 @@
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -238,7 +272,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button BtnStream;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button BtnOmhoog;
+        private System.Windows.Forms.Button BtnOmlaag;
     }
 }
 

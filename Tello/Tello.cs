@@ -112,11 +112,20 @@ namespace tellocs
         /// </summary>
         /// <param name="query">the query with ? at the end</param>
         /// <returns></returns>
-        public T Query<T>(string query)
+        /// 
+        // try catch voor de zekerheid
+    public T Query<T>(string query)
         {
-            TelloResponse response = SendMessage(query, waitForResponse: true, timeOutMs: 1000, expectedResponse: null);
-            if (response.Ok) return (T)Convert.ChangeType(response.Response, typeof(T));
-            return default(T);
+            try
+            {
+                TelloResponse response = SendMessage(query, waitForResponse: true, timeOutMs: 1000, expectedResponse: null);
+                if (response.Ok) return (T)Convert.ChangeType(response.Response, typeof(T));
+                return default(T);
+            }
+            catch (Exception ex)
+            {
+                return default(T);
+            }
         }
 
         /// <summary>
@@ -657,10 +666,10 @@ namespace tellocs
         protected void StartFFmpegProcess(string options, string output)
         {
             StartFFmpegProcess($"{options} {output}");
-        }
+        }/*
 
         protected void StartFFmpegProcess(string outputArguments)
-        {
+        {/*
             string arguments = $"-i udp://0.0.0.0:{_videoUdpPort} {outputArguments}";
             ProcessStartInfo info = new ProcessStartInfo()
             {
@@ -679,6 +688,23 @@ namespace tellocs
             Log.Action($"Starting: ffmpeg {arguments}");
             _ffmpegProcess = Process.Start(info);
             //_ffmpegProcess.WaitForExit();
+            
+        }*/
+
+        protected void StartFFmpegProcess(string outputArguments)
+        {
+
+            ProcessStartInfo ffplay = new ProcessStartInfo()
+            {
+                FileName = "C:\\bin\\ffmpeg\\bin\\ffplay.exe",
+                Arguments = $"udp://0.0.0.0:{_videoUdpPort} -fflags nobuffer -flags low_delay -framedrop -probesize 32 -analyzeduration 0 -max_delay 0",
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                WorkingDirectory = Environment.CurrentDirectory,
+            };
+
+            Process.Start(ffplay);
+
         }
 
         protected string _telloIpAddress;

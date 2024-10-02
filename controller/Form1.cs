@@ -108,6 +108,22 @@ namespace controller
             tello.StartOrStopVideoStreaming();
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //update battery status op Label1
+            label1.Text = "baterij " + tello.Battery.ToString();
+        }
+
+        private void BtnOmhoog_Click(object sender, EventArgs e)
+        {
+            tello.Up(50);
+        }
+
+        private void BtnOmlaag_Click(object sender, EventArgs e)
+        {
+            tello.Down(50);
+        }
     }
 }
 
