@@ -51,6 +51,61 @@ namespace controller
         {
             tello.Land();
         }
+
+        private void BtnTurnLeft_Click(object sender, EventArgs e)
+        {
+            tello.CounterClockwise(90);
+        }
+
+        private void BtnTurnRight_Click(object sender, EventArgs e)
+        {
+            tello.Clockwise(90);
+        }
+
+        private void BtnVooruit_Click(object sender, EventArgs e)
+        {
+            tello.Forward(50);
+        }
+
+        private void BtnAchteruit_Click(object sender, EventArgs e)
+        {
+            tello.Back(50);
+        }
+
+        private void BtnFlip_Click(object sender, EventArgs e)
+        {
+            tello.Flip("l");
+        }
+
+        private void BtnFlipRight_Click(object sender, EventArgs e)
+        {
+            tello.Flip("r");
+        }
+
+        private void BtnFrontFlip_Click(object sender, EventArgs e)
+        {
+            tello.Flip("f");
+        }
+
+        private void BtnBackFlip_Click(object sender, EventArgs e)
+        {
+            tello.Flip("b");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            tello.Right(50);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tello.Left(50);
+        }
+
+        private void BtnStream_Click(object sender, EventArgs e)
+        {
+            tello.StreamOn();
+        }
     }
 }
 
