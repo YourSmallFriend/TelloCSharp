@@ -46,6 +46,8 @@
             timer1 = new System.Windows.Forms.Timer(components);
             BtnOmhoog = new System.Windows.Forms.Button();
             BtnOmlaag = new System.Windows.Forms.Button();
+            BtnVliegPadSelecteren = new System.Windows.Forms.Button();
+            listBox1 = new System.Windows.Forms.ListBox();
             SuspendLayout();
             // 
             // button1
@@ -116,7 +118,7 @@
             // 
             // BtnFlip
             // 
-            BtnFlip.Location = new System.Drawing.Point(31, 188);
+            BtnFlip.Location = new System.Drawing.Point(442, 348);
             BtnFlip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             BtnFlip.Name = "BtnFlip";
             BtnFlip.Size = new System.Drawing.Size(131, 72);
@@ -127,7 +129,7 @@
             // 
             // BtnFlipRight
             // 
-            BtnFlipRight.Location = new System.Drawing.Point(579, 188);
+            BtnFlipRight.Location = new System.Drawing.Point(579, 348);
             BtnFlipRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             BtnFlipRight.Name = "BtnFlipRight";
             BtnFlipRight.Size = new System.Drawing.Size(131, 72);
@@ -138,7 +140,7 @@
             // 
             // BtnFrontFlip
             // 
-            BtnFrontFlip.Location = new System.Drawing.Point(305, 28);
+            BtnFrontFlip.Location = new System.Drawing.Point(442, 268);
             BtnFrontFlip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             BtnFrontFlip.Name = "BtnFrontFlip";
             BtnFrontFlip.Size = new System.Drawing.Size(131, 72);
@@ -149,7 +151,7 @@
             // 
             // BtnBackFlip
             // 
-            BtnBackFlip.Location = new System.Drawing.Point(305, 268);
+            BtnBackFlip.Location = new System.Drawing.Point(579, 268);
             BtnBackFlip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             BtnBackFlip.Name = "BtnBackFlip";
             BtnBackFlip.Size = new System.Drawing.Size(131, 72);
@@ -208,7 +210,7 @@
             // 
             // BtnOmhoog
             // 
-            BtnOmhoog.Location = new System.Drawing.Point(579, 28);
+            BtnOmhoog.Location = new System.Drawing.Point(305, 28);
             BtnOmhoog.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             BtnOmhoog.Name = "BtnOmhoog";
             BtnOmhoog.Size = new System.Drawing.Size(131, 72);
@@ -219,7 +221,7 @@
             // 
             // BtnOmlaag
             // 
-            BtnOmlaag.Location = new System.Drawing.Point(579, 108);
+            BtnOmlaag.Location = new System.Drawing.Point(305, 268);
             BtnOmlaag.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             BtnOmlaag.Name = "BtnOmlaag";
             BtnOmlaag.Size = new System.Drawing.Size(131, 72);
@@ -228,11 +230,31 @@
             BtnOmlaag.UseVisualStyleBackColor = true;
             BtnOmlaag.Click += BtnOmlaag_Click;
             // 
+            // BtnVliegPadSelecteren
+            // 
+            BtnVliegPadSelecteren.Location = new System.Drawing.Point(579, 28);
+            BtnVliegPadSelecteren.Name = "BtnVliegPadSelecteren";
+            BtnVliegPadSelecteren.Size = new System.Drawing.Size(131, 29);
+            BtnVliegPadSelecteren.TabIndex = 16;
+            BtnVliegPadSelecteren.Text = "pad";
+            BtnVliegPadSelecteren.UseVisualStyleBackColor = true;
+            BtnVliegPadSelecteren.Click += BtnVliegPadSelecteren_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.Location = new System.Drawing.Point(581, 67);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new System.Drawing.Size(139, 184);
+            listBox1.TabIndex = 17;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(732, 562);
+            Controls.Add(listBox1);
+            Controls.Add(BtnVliegPadSelecteren);
             Controls.Add(BtnOmlaag);
             Controls.Add(BtnOmhoog);
             Controls.Add(label1);
@@ -276,6 +298,8 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button BtnOmhoog;
         private System.Windows.Forms.Button BtnOmlaag;
+        private System.Windows.Forms.Button BtnVliegPadSelecteren;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

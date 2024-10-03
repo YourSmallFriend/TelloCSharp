@@ -11,6 +11,9 @@ using tellocs;
 using LogLib;
 using SettingsLib;
 using System.IO;
+using Microsoft.VisualBasic.ApplicationServices;
+using System.Windows.Input;
+using System.Windows.Controls;
 
 namespace controller
 {
@@ -22,8 +25,6 @@ namespace controller
         }
 
         Tello tello = new Tello();
-
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -37,7 +38,6 @@ namespace controller
             tello.Speed = settings.GetOrAddSetting<int>("DefaultDroneSpeed", 50);
             tello.FFmpegPath = settings.GetOrAddSetting<string>("FFmpegPath", "ffmpeg.exe");
             tello.DebugMode = settings.GetOrAddSetting<bool>("DebugMode", false);
-
             Log.Action("Connecting to Tello");
             tello.Connect();
         }
@@ -64,12 +64,12 @@ namespace controller
 
         private void BtnVooruit_Click(object sender, EventArgs e)
         {
-            tello.Forward(100);
+            tello.Forward(50);
         }
 
         private void BtnAchteruit_Click(object sender, EventArgs e)
         {
-            tello.Back(100);
+            tello.Back(50);
         }
 
         private void BtnFlip_Click(object sender, EventArgs e)
@@ -106,7 +106,6 @@ namespace controller
         {
             //start video stream
             tello.StartOrStopVideoStreaming();
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -124,6 +123,74 @@ namespace controller
         {
             tello.Down(50);
         }
+
+        private int lr = 0, fb = 0, ud = 0, d = 0;
+        private bool useRC = true; // Voor de demonstratie, als useRC ergens anders vandaan komt moet dit aangepast worden.
+
+        private void BtnVliegPadSelecteren_Click(object sender, EventArgs e)
+        {
+
+            //creeer een nieuw vliegpad en sla deze op in een csv bestand
+            string[] vliegpad = new string[] { "takeoff", "up 50", "forward 100","flip f" ,"flip b","flip l","flip r", "land" };
+
+            foreach (string command in vliegpad)
+            {
+                tello.Control(command);
+            }
+        }
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //string[] vliegpad = System.IO.File.ReadAllLines(@"\GitHub\TelloCSharp\controller\vliegpad.csv");
+            //foreach (string command in vliegpad)
+            //{
+            //    tello.Control(command);
+            //}
+        }
+
+        //private void Form1_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.W)
+        //    {
+        //        fb = 100;
+        //    }
+        //    else if (e.KeyCode == Keys.S)
+        //    {
+        //        fb = -100;
+        //    }
+
+        //    if (e.KeyCode == Keys.Left)
+        //    {
+        //        lr = -100;
+        //    }
+        //    else if (e.KeyCode == Keys.Right)
+        //    {
+        //        lr = 100;
+        //    }
+
+        //    if (e.KeyCode == Keys.Space)
+        //    {
+        //        ud = 100;
+        //    }
+        //    else if (e.KeyCode == Keys.ShiftKey)
+        //    {
+        //        ud = -100;
+        //    }
+
+        //    if (e.KeyCode == Keys.D)
+        //    {
+        //        d = 100;
+        //    }
+        //    else if (e.KeyCode == Keys.A)
+        //    {
+        //        d = -100;
+        //    }
+
+        //    // Stuur de commando's als useRC true is
+        //    if (useRC)
+        //    {
+        //        tello.SendRCControl(lr, fb, ud, d); // Zorg ervoor dat tello correct geïnitialiseerd is in jouw project
+        //    }
+        //}
     }
 }
 
